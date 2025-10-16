@@ -1,6 +1,6 @@
 # Tema-8-products
 
-# Teknisk dokumentation for Tema 7 gruppeprojekt
+# Teknisk dokumentation for Tema 8 gruppeprojekt
 
 Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.
 
