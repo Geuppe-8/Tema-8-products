@@ -53,9 +53,9 @@ Brug korte beskrivelser, som i eksemplerne herover
 
 # API endpoints
 
-Dette afsnit skal liste de endpoints fra API'et i har benyttet:
+Det endpoint i API'et vi har benyttet:
 
-- (fx. https://dummyjson.com/products)
+- (https://dummyjson.com/products)
 
 # Dokumentation af Funktion
 
