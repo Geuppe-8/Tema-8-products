@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
     <meta charset="UTF-8">
@@ -9,12 +9,109 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <title>Forside</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <header>
+        <div class="top-bar">
+            <p>Fri fragt til pakkeshops på ordrer over 299 kr</p>
+        </div>
+        <div class="header-content">
+            <div class="search-bar">
+                <input type="text" placeholder="Søg Produkter ......">
+                <button><img src="search-icon.svg" alt="Search"></button>
+            </div>
 
+        </div>
+        <nav class="categories">
+            <a href="produktliste.html">Shop all</a>
+            <a href="produktliste.html">Accessories</a>
+            <a href="produktliste.html">Clothes and shoes</a>
+            <a href="produktliste.html">Home</a>
+            <a href="produktliste.html">Beauty</a>
+            <a href="produkt.html">Skincare</a>
+            <a href="produktliste.html">Perfume</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pink-offer-section">
+            <div class="pink-offer-grid">
+                <div class="pink-offer-text">
+                    <h1>SPAR</h1>
+                    <h2>20%</h2>
+                    <p>på alt MAKEUP</p>
+                </div>
+                <div class="pink-offer-image">
+                    <img src="img/makeup.jpg" alt="Billede af makeup">
+                </div>
+            </div>
+        </section>
+
+        <section class="brown-section">
+            <div class="brown-content">
+                <h2>Vi tror, at du vil kunne li'</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product">
+                    <div class="billede-container">
+                        <img src="img/gucci.jpg" alt="Gucci Bloom">
+                    </div>
+                    <p>Gucci</p>
+                    <p>Bloom Eau de Parfum for Women</p>
+                    <p>1.339 kr.</p>
+                </div>
+                <div class="product">
+                    <div class="billede-container">
+                        <img src="img/dior.jpg" alt="Dior J'adore">
+                    </div>
+                    <p>Dior</p>
+                    <p>J'adore l'Or Eau de Parfum</p>
+                    <p>1.299 kr.</p>
+                </div>
+                <div class="product">
+                    <div class="billede-container">
+                        <img src="img/chanel.jpg" alt="Chanel Coco Noir">
+                    </div>
+                    <p>Chanel</p>
+                    <p>COCO NOIR Eau De Parfum Spray</p>
+                    <p>724,95 kr.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="accessories-section">
+            <div class="accessories-grid">
+                <div class="accessories-image">
+                    <img src="img/accessories.jpg" alt="Accessories">
+                </div>
+                <div class="accessories-text">
+                    <h2>Udforsk udvalget af accessories</h2>
+                    <p>Tasker, briller, ure, smykker og meget mere</p>
+                    <a href="#" class="shop-link">Shop her</a>
+                </div>
+            </div>
+        </section>
+        <section class="about-section">
+            Hos Luméa forener vi autenticitet, femininitet og eksklusivitet i alt, vi skaber.  Vores univers er designet
+            til den
+            moderne kvinde, der ønsker at føle sig elegant, selvsikker og naturlig på samme tid.</section>
+
+        <footer class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Bliv en del af Luméa Circle</h2>
+                <p>Vær den første til at opdage nye kollektioner, trends og eksklusive tilbud.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Indtast din e-mail..." required>
+                    <button type="submit">Tilmeld</button>
+                </form>
+                <p class="newsletter-note">Ingen spam – kun skønhed</p>
+            </div>
+        </footer>
+    </main>
     <script src="index.js"></script>
 </body>
 
