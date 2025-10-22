@@ -21,27 +21,31 @@ if (!id) {
 function renderProduct(p) {
   const inStock = (p.stock ?? 0) > 0;
   const reviewCount = Array.isArray(p.reviews) ? p.reviews.length : null;
+  const images = Array.isArray(p.images) && p.images.length ? p.images : [p.thumbnail];
+  let index = 0;
 
   container.innerHTML = `
     <div class="product-container">
       <div class="product-images">
         <img src="${p.images[0]}" alt="${p.title}" class="main-img">
-        <div class="images">
-          ${p.images
-            .slice(1)
-            .map((img, i) => `<img src="${img}" alt="${p.title} image ${i + 2}" class="thumb">`)
-            .join("")}
-        </div>
+        <!-- arrows are injected by JS -->
       </div>
 
       <div class="product-info">
         <h1 class="product-name">${p.title}</h1>
-        <p>${p.brand} • ${p.category}</p>
-        <p class="product-rating">⭐ ${p.rating} ${reviewCount ? `(${reviewCount} reviews)` : ""}</p>
-        <p class="product-price"> $${p.price}</p>
+        <p class="subtle">${p.brand} • ${p.category}</p>
+        <P class="rating">⭐ ${p.rating} ${reviewCount ? `(${reviewCount} reviews)` : ""}</p>
+        <p class="product-price"> ${p.price} USD</p>
         <p class="product-description">${p.description}</p>
+        <div class="group">
         <p class="product-stock">${inStock ? "✅ In stock" : "❌ Out of stock"}</p>
-      </div>
+        <div class="flex1-1">
+        <p class="kurv">Add to cart</p>
+        <p class="heart">♡</p>
+        </div>
+        </div>
+        </div>
+
     </div>
     
     ${
@@ -49,29 +53,58 @@ function renderProduct(p) {
         ? `
               <div class="product-reviews">
                 <h2>Customer Reviews</h2>
-                ${p.reviews
-                  .map(
-                    (r) => `
-                      <div class="review">
-                        <p class="review-rating">⭐ ${r.rating}/5</p>
-                        <p class="review-comment">"${r.comment}"</p>
-                        <p class="review-name">- ${r.reviewerName}</p>
-                      </div>
-                    `
-                  )
-                  .join("")}
+                ${(() => {
+                  let reviewsHTML = "";
+                  for (let i = 0; i < p.reviews.length; i++) {
+                    const r = p.reviews[i];
+                    reviewsHTML += `
+      <div class="review">
+        <p class="review-rating">⭐ ${r.rating}/5</p>
+        <p class="review-comment">"${r.comment}"</p>
+        <p class="review-name">- ${r.reviewerName}</p>
+      </div>
+    `;
+                  }
+                  return reviewsHTML;
+                })()}
               </div>
             `
         : "<p class='no-reviews'>No reviews yet.</p>"
     }
   `;
 
-  // Fra thumnail billede til main billede
-  const mainImage = container.querySelector(".main-image");
-  const thumbs = container.querySelectorAll(".thumb");
-  thumbs.forEach((thumb) => {
+  const mainImg = container.querySelector(".main-img");
+  const imageWrapper = container.querySelector(".product-images");
+  const thumbs = [...container.querySelectorAll(".thumb")];
+  const allImages = Array.isArray(p.images) && p.images.length ? p.images : [p.thumbnail];
+
+  // klik på thumbnails (du laver dem via .slice(1), derfor +1)
+  thumbs.forEach((thumb, i) => {
     thumb.addEventListener("click", () => {
-      mainImage.src = thumb.src;
+      index = (i + 1) % allImages.length;
+      mainImg.src = allImages[index];
     });
   });
+
+  // --- gør billeder skiftbare med pile ---
+  if (allImages.length > 1) {
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "gallery-arrow prev";
+    prevBtn.textContent = "‹";
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "gallery-arrow next";
+    nextBtn.textContent = "›";
+
+    imageWrapper.appendChild(prevBtn);
+    imageWrapper.appendChild(nextBtn);
+
+    function show(i) {
+      index = (i + allImages.length) % allImages.length; // wrap rundt
+      mainImg.src = allImages[index];
+    }
+
+    prevBtn.addEventListener("click", () => show(index - 1));
+    nextBtn.addEventListener("click", () => show(index + 1));
+  }
 }
