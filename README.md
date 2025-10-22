@@ -1,6 +1,6 @@
 # Tema-8-products
 
-# Teknisk dokumentation for Tema 7 gruppeprojekt
+# Teknisk dokumentation for Tema 8 gruppeprojekt
 
 Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.
 
@@ -53,9 +53,9 @@ Brug korte beskrivelser, som i eksemplerne herover
 
 # API endpoints
 
-Dette afsnit skal liste de endpoints fra API'et i har benyttet:
+Det endpoint i API'et vi har benyttet:
 
-- (fx. https://dummyjson.com/products)
+- (https://dummyjson.com/products)
 
 # Dokumentation af Funktion
 
