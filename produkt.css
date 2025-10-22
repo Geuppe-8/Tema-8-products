@@ -18,8 +18,9 @@ p {
 }
 
 .subtle {
-  color: #f1d5dc;
+  color: #fbaed2;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .product-price {
