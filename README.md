@@ -104,15 +104,49 @@ https://dummyjson.com/products
 Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
 
 - Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
+
+function showFilter(filter) {
+if (filter === "All") {
+showProducts(allData);
+console.log("Viser alle produkter");
+} else {
+const filteredData = allData.filter(function (product) {
+return product.category === filter;
+});
+showProducts(filteredData);
+console.log("Viser kun:", filter);
+}
+}
+
+--> Funktionen filtrerer listen af produkter ud fra den kategori, brugeren vælger.
+Hvis brugeren vælger "All", vises alle produkter.
+Hvis brugeren vælger en bestemt kategori (fx “electronics” eller “clothing”), filtrerer funktionen dataene, så kun produkter med den kategori bliver vist.
+
+Den arbejder sammen med funktionen showProducts(), som står for at vise de valgte produkter i DOM’en (på selve hjemmesiden).
+Derudover udskriver den en besked i konsollen, som fortæller, hvad der bliver vist.
+
 - Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
+  filter: En streng (tekstværdi), som fortæller hvilken kategori brugeren har valgt.
+  Denne værdi kan komme fra et filter-element på siden (fx en dropdown eller en knap), og bruges til at sammenligne med produktkategorierne i dataene.
+
 - Returnerer: Beskriv, om funktionen returnerer en værdi eller blot manipulerer DOM’en.
+  Funktionen returnerer ikke en værdi.
+  I stedet manipulerer den DOM’en ved at kalde showProducts()-funktionen, som ændrer, hvilke produkter der vises på siden.
+
 - Eksempel på brug: Indsæt funktions-koden herunder(der hvor koden er i eksemplet) og vis, hvordan funktionen kaldes:
 
 ```javascript
 //funktionens kode:
-function voresFunktion(sprog) {
-  console.log(`${sprog} syntax highlighting`);
+function showFilter(filter) {
+  if (filter === "All") {
+    showProducts(allData);
+    console.log("Viser alle produkter");
+  } else {
+    const filteredData = allData.filter(function (product) {
+      return product.category === filter;
+    });
+    showProducts(filteredData);
+    console.log("Viser kun:", filter);
+  }
 }
-//hvordan funktionen kaldes:
-voresFunktion("JavaScript");
 ```
