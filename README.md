@@ -2,38 +2,75 @@
 
 # Teknisk dokumentation for Tema 8 gruppeprojekt
 
-Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.
-
-Skriv derfor jeres fælles retningslinjer for punkterne herunder(tilføj gerne flere selv), sådan som det giver bedst mening for jer som gruppe. Dokumentationen sikre, at jeres fælles kodebase forbliver overskuelig, er let at arbejde med og til at forstå for alle, og at I undgå konflikter, og har nemmere ved at hjælpe hinanden undervejs.
+Når man arbejder flere sammen om et fælles projekt, er det vigtigt at have klare retningslinjer for struktur, navngivning og samarbejde. Dette dokument beskriver vores fælles standarder og retningslinjer, så projektet forbliver overskueligt, konsistent og nemt at arbejde videre med for alle i gruppen.
 
 ## Projektstruktur:
 
-Beslut, hvordan I vil organisere jeres projekt – struktur for mapper og filer.
+Vores HTML-filer ligger i projektets rodmappe og hedder:
 
-- Hvordan organiserer I billeder, fonte og andre ressourcer?
-- Hvor placerer I boilerplate?(fx CSS- og JavaScript-filer, der bruges på tværs af projektet)
-- Hvor placerer I HTML, CSS- og JavaScript-filer til fx detaljevisning og listevisning?
+index.html (forside med produktoversigt)
+
+produktliste.html (visning af flere produkter)
+
+produkt.html (detaljevisning af ét produkt)
+
+CSS-filer ligger også i projektets rodmappe og matcher sidernes navne:
+
+index.css
+
+produktliste.css
+
+produkt.css
+
+JavaScript-filer ligger også i projektets rodmappe og matcher sidernes navne:
+
+index.js
+
+produktliste.js
+
+produkt.js
+
+Billeder ligger i mappen /img.
+
+Google Fonts hentes via link i <head> i HTML-filerne.
+
+Vores css er linket i vores head og vores js er linket i bunden af body.
 
 ## Navngivning:
 
-Beslutte hvordan i vil navngive filer og mapper for at sikre en ensartet struktur og undgå forvirring.
+Alle filer og mapper har navngivet med små bogstaver, uden mellemrum, og med bindestreg (-) som separator. Hvis nødvendigt.
 
-- Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller \_)
-- Hvordan sikre I at det er til at forstå hvilke HTML-, CSS- og JavaScript-filer der høre sammen?
+HTML-, CSS- og JavaScript-filer der hører sammen, får samme navn, så man nemt kan se sammenhængen.
 
 ## Link til scripts:
 
-- Hvor placerer I script referencer i HTML'en? (fx i <head> med defer attribute, eller sidst i <body>)
+CSS-filer linkes i <head>:
+
+<link rel="stylesheet" href="css/produktliste.css">
+
+JavaScript-filer linkes nederst i <body>
+
+<script src="js/produktliste.js"></script>
 
 ## Git branches:
 
-- Hvordan navngiver I branches, så alle kan forstår hvem der arbejder i branchen og på hvad?(fx feature-lotte-formular)
+Hver person i gruppen har arbejdet i sin egen branch, navngivet efter fornavn:
+
+Så det ville være: Alma, Humira, Chaima og Batul
+
+Når arbejdet var testet og færdigt, blev branchen merget til main.
+
+Alle merges blev lavet via pull requests, så ændringer kunne gennemgås af gruppen først.
 
 ## Arbejdsflow:
 
-- Hvordan fordeler I arbejdet, så I undgår at flere arbejder i de samme filer samtidigt?
-- Hvordan sikrer I, at commit-beskeder er beskrivende?
-- Hvordan kommunikerer i om ændringer i main branchen når feature merges?
+For at undgå konflikter har hver person arbejdet på forskellige filer eller sektioner af projektet.
+
+Vi har lavet vores commit beskeder med korte og beskrivende navne som kunne være:
+
+Justering af css på produkt side eller filtrer funktion tilføjet
+
+Når vi laver nye ændringer merges til main, kommunikere vi det i gruppen, så alle kan hente de nyeste ændringer via pull.
 
 ## Kode:
 
@@ -43,19 +80,24 @@ Beslutte hvordan i vil navngive filer og mapper for at sikre en ensartet struktu
 
 # Funktionalitet
 
-Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websitet. Tænk over hvilke interaktioner brugeren kan foretage på sitet? Eller hvordan websitet håndterer og præsenterer data? Eksempler på funktionalitet, der kan beskrives:
+Vores website henter data fra API’et https://dummyjson.com/products
+og viser produkterne dynamisk på siden.
 
-- Hentning af produkter fra API.
-- Filtrering af produkter baseret på brugerens valg.
-- Dynamisk visning af produkter i HTML.
+Brugeren kan:
 
-Brug korte beskrivelser, som i eksemplerne herover
+Se en liste over produkter på produktliste.html.
+
+Klikke på et produkt og se detaljevisning på produkt.html.
+
+Filtrere produkter efter kategori som tasker, sko, tøj osv
+
+Produkterne hentes og vises dynamisk i HTML via JavaScript.
 
 # API endpoints
 
-Det endpoint i API'et vi har benyttet:
+Vi har brugt følgende endpoint:
 
-- (https://dummyjson.com/products)
+https://dummyjson.com/products
 
 # Dokumentation af Funktion
 
