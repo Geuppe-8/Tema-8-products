@@ -165,12 +165,12 @@ header img {
   background: #f9f7f4;
 }
 .buttons button:focus {
-  outline: 3px solid #f1d5dc;
+  outline: 3px solid #fbaed2;
   outline-offset: 2px;
 }
 .buttons button:active {
   transform: translateY(1px);
-  background: #e8dcc8;
+  background: #fbaed2;
 }
 
 .product-container {
@@ -188,13 +188,13 @@ header img {
 }
 .card > a p:last-of-type {
   margin-top: auto;
-  color: #f1d5dc;
+  color: #ff91a4;
   font-weight: 600;
   text-decoration: none;
 }
 .card > a:hover p:last-of-type,
 .card > a:focus p:last-of-type {
-  color: #e6cba8;
+  color: #f8d7da;
 }
 
 .list-title {

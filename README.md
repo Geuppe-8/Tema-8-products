@@ -74,9 +74,15 @@ Når vi laver nye ændringer merges til main, kommunikere vi det i gruppen, så 
 
 ## Kode:
 
-- Hvordan skriver i funktioner i JavaScript?(fx med function keyword eller som arrow functions)
-- Beslut hvilken CSS selector i benyttes til referener i henholdsvis CSS og JavaScript(fx. id'er til JavaScript og Classes til CSS)
-- Skal filer have korte forklaringer som kommentarer?
+Vi skriver vores JavaScript-funktioner med function keyword, da det gør koden overskuelig og let at læse.
+
+Vi bruger classes som fx (.ikoner) som selectors i både CSS og JavaScript.
+
+CSS bruges til styling (fx .product-container, .card).
+
+JavaScript bruges til at hente elementer (fx document.querySelector(".buttons button")).
+
+Nogle gange kommenterer vi kort i vores kode for at forklare, hvad funktioner og sektioner gør.
 
 # Funktionalitet
 

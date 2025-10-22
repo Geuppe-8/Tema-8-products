@@ -154,7 +154,6 @@ header {
 }
 
 .pink-offer-image img {
-  height: 200px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
@@ -186,7 +185,6 @@ header {
   }
 
   .pink-offer-image img {
-    height: 350px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
   }
