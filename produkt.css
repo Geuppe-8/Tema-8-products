@@ -42,6 +42,7 @@ p {
 
 .product-container {
   margin-top: 50px;
+  margin-left: 20px;
 }
 
 .product-description {
@@ -223,6 +224,9 @@ header {
 
 /******** CUSTOMER REVIEWS ********/
 
+.review {
+  margin-left: 15px;
+}
 .rating {
   margin-bottom: 15px;
 }
